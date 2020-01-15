@@ -50,12 +50,22 @@ function createPanel(title, content) {
     buttonClose.classList.add('panel-btn-close', 'hide-btn');
     panelContent.classList.add('panel-content');
 
-     // set text content
+    // set text content
     buttonOpen.textContent = '\u25bc';
     buttonClose.textContent = '\u25b2';
     panelContent.textContent = content;
     panelTitle.textContent = title;
 
+    // button events 
+    // toggling classes mean this:
+    // remove .toggle-on if .toggle-on exists
+    // add .toggle-on on if .toggle-on does not exist
+
+    buttonPanel.addEventListener('click', event => {
+        console.log('button clicked', event.target)
+        buttonOpen.classList.toggle('hide-btn');
+        buttonClose.classList.toggle('hide-btn');
+    })
     return panel;
 }
 
