@@ -65,6 +65,8 @@ function createPanel(title, content) {
         console.log('button clicked', event.target)
         buttonOpen.classList.toggle('hide-btn');
         buttonClose.classList.toggle('hide-btn');
+
+        panelContent.classList.toggle('toggle-on');
     })
     return panel;
 }
