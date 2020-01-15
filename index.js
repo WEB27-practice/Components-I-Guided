@@ -24,7 +24,24 @@ const panelData = [
 
 
 // create new function that will create a panel component exactly as you see it in the HTML
+function createPanel(title, content) {
+    // create new elements
+    const panel = document.createElement('div');
+    const panelBar = document.createElement('div');
+    const panelTitle = document.createElement('h3');
+    const buttonPanel = document.createElement('div');
+    const buttonOpen = document.createElement('button');
+    const buttonClose = document.createElement('button');
+    const panelContent = document.createElement('div');
 
+    // setup the structure of our elements
+    panel.append(panelBar);
+    panel.append(panelContent);
+    panelBar.append(panelTitle);
+    panelBar.append(buttonPanel);
+    buttonPanel.append(buttonOpen);
+    buttonPanel.append(buttonClose);
+}
 
 // give the component functionality when the open or closed button is clicked, the content is toggled on/off
 
