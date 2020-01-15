@@ -41,16 +41,36 @@ function createPanel(title, content) {
     panelBar.append(buttonPanel);
     buttonPanel.append(buttonOpen);
     buttonPanel.append(buttonClose);
+
+    // add classes to elements
+    panel.classList.add('panel');
+    panelBar.classList.add('panel-bar');
+    buttonPanel.classList.add('panel-buttons');
+    buttonOpen.classList.add('panel-btn-open');
+    buttonClose.classList.add('panel-btn-close', 'hide-btn');
+    panelContent.classList.add('panel-content');
+
+     // set text content
+    buttonOpen.textContent = '\u25bc';
+    buttonClose.textContent = '\u25b2';
+    panelContent.textContent = content;
+    panelTitle.textContent = title;
+
+    return panel;
 }
+
 
 // give the component functionality when the open or closed button is clicked, the content is toggled on/off
 
 // create components for each of the items in the above array.
 
 // grab the parent element to append our data too
-
+const accordion = document.querySelector('.accordion');
+console.log(accordion)
 
 // we loop through the data and created panels for each content and title
-
+panelData.forEach(data => {
+    accordion.append(createPanel(data.title, data.content))
+})
 
 
